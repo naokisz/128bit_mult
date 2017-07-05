@@ -16,6 +16,11 @@ int main() {
 	int bit;
 	uint64_t a = 0, b = 0, lo_asm, hi_asm, lo, hi;
 
+	printf("a=");
+	scanf("%"SCNx64"", &a);
+	printf("b=");
+	scanf("%"SCNx64"", &b);
+
 	for(;;) {
 		for(;;) {
 			printf("a=%"PRIu64"\t", a);
