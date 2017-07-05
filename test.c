@@ -17,9 +17,9 @@ int main() {
 	uint64_t a = 0, b = 0, lo_asm, hi_asm, lo, hi;
 
 	printf("a=");
-	scanf("%"SCNx64"", &a);
+	scanf("%"SCNu64"", &a);
 	printf("b=");
-	scanf("%"SCNx64"", &b);
+	scanf("%"SCNu64"", &b);
 
 	for(;;) {
 		for(;;) {
