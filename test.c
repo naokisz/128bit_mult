@@ -3,13 +3,13 @@
 #include <stdint.h>
 #include <inttypes.h>
 
-void mul128_asm_x86_64(uint64_t a, uint64_t b, uint64_t *lo, uint64_t *hi)
+/*void mul128_asm_x86_64(uint64_t a, uint64_t b, uint64_t *lo, uint64_t *hi)
 {
 	__asm__("mul %%rdx":
 	"=a" (*lo), "=d" (*hi):
 	"a" (a), "d" (b));
 	
-}
+}*/
 
 int main() {
 
@@ -17,15 +17,16 @@ int main() {
 	uint64_t a = 0, b = 0, lo_asm, hi_asm, lo, hi;
 
 	printf("a=");
-	scanf("%"SCNu64"", &a);
+	scanf("%"SCNx64"", &a);
 	printf("b=");
-	scanf("%"SCNu64"", &b);
+	scanf("%"SCNx64"", &b);
 
 	for(;;) {
 		for(;;) {
 			printf("a=%"PRIu64"\t", a);
 			printf("b=%"PRIu64"\n", b);
 			mul128_asm_x86_64(a, b, &lo_asm, &hi_asm);
+			//lo_asm = a * b;
 			mult_128bit(a, b, &lo, &hi);
 			if(lo_asm != lo || hi_asm != hi) {
 				printf("Not much!!!!!!!!\n");
