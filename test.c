@@ -25,7 +25,7 @@ int main() {
 		for(;;) {
 			printf("a=%"PRIu64"\t", a);
 			printf("b=%"PRIu64"\n", b);
-			mul128_asm_x86_64(a, b, &lo_asm, &hi_asm);
+			//mul128_asm_x86_64(a, b, &lo_asm, &hi_asm);
 			//lo_asm = a * b;
 			mult_128bit(a, b, &lo, &hi);
 			if(lo_asm != lo || hi_asm != hi) {
