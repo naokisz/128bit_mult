@@ -3,13 +3,13 @@
 #include <stdint.h>
 #include <inttypes.h>
 
-/*void mul128_asm_x86_64(uint64_t a, uint64_t b, uint64_t *lo, uint64_t *hi)
+void mul128_asm_x86_64(uint64_t a, uint64_t b, uint64_t *lo, uint64_t *hi)
 {
 	__asm__("mul %%rdx":
 	"=a" (*lo), "=d" (*hi):
 	"a" (a), "d" (b));
 	
-}*/
+}
 
 int main() {
 
