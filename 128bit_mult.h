@@ -28,7 +28,11 @@ void mult_128bit(uint64_t a, uint64_t b, uint64_t *lo, uint64_t *hi) {
 	for(bit = 0;bit < 64;bit++) {
 		if(b & (0x1ull << bit)) {
 			tmplo = a << bit;
-			tmphi = a >> (64 - bit);
+			if((a >> (64 - bit)) >= 64) {
+				tmphi = 0;
+			} else {
+				tmphi = a >> (64 - bit);
+			}
 			*hi += tmphi + carry_of_64bit_add(*lo, tmplo);
 			*lo += tmplo;
 		}
